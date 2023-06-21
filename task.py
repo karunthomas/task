@@ -56,7 +56,6 @@ def exists(url):
 
 def crawl(url):
     domain = getdomain(url)
-    print(exists(url))
     if not exists(url):
         print(f"Crawling: {url}")
         try:
