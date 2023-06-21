@@ -1,0 +1,6 @@
+.DS_Store
+Python.code-workspace
+.venv
+crawler.log
+crawler.db
+t2.py
