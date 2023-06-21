@@ -1,6 +1,6 @@
 '''
 Author: Karun Thomas
-Date: 21-06-2023
+Date: 20-06-2023
 '''
 import logging
 
@@ -56,6 +56,7 @@ def exists(url):
 
 def crawl(url):
     domain = getdomain(url)
+    print(exists(url))
     if not exists(url):
         print(f"Crawling: {url}")
         try:
@@ -67,9 +68,7 @@ def crawl(url):
         except Exception as e:
             logging.error(f"Error insert links '{url}' in the database: {str(e)}")
         try:
-            response = requests.get(
-                
-            )
+            response = requests.get(url)
             if response.status_code == 200:
                 for link in extract(response.text):
                     absolute_link = urljoin(url, link)
